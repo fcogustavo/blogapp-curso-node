@@ -1,0 +1,26 @@
+<h3>Nova Postagem:</h3>
+<div class="card">
+    <div class="card-body">
+        <form action="/admin/posts/new" method="post">
+            <label for="title">Título: </label>
+            <input type="text" name="title" placeholder="Título da postagem" class="form-control" required>
+            <label for="slug">Slug: </label>
+            <input type="text" name="slug" placeholder="Slug da postagem" class="form-control">
+            <label for="description">Descrição: </label>
+            <input type="text" name="description" placeholder="Descrição" class="form-control">
+            <label for="content">Conteúdo: </label>
+            <textarea name="content" class="form-control" placeholder="(Conteúdo da Postagem)"></textarea>
+            <label for="category">Categoria: </label>
+            <select name="category" class="form-select">
+                <option value="0" selected></option>
+                {{#each categories}}
+                    <option value="{{_id}}">{{name}}</option>
+                {{else}}
+                    <option disabled>Nenhuma postagem registrada</option>
+                {{/each}}
+            </select>
+            <br>
+            <button type="submit" class="btn btn-success">Criar postagem</button>
+        </form>
+    </div>
+</div>

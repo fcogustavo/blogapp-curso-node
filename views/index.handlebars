@@ -1,0 +1,28 @@
+<div class="card text-bg-dark mt-3">
+    <div class="card-body">
+        <h1 class="display-4 my-4">Bem-vindo ao Blog do NodeJS!</h1>
+        <p class="lead">Este é um BLOG simples, desenvolvido com Node.js, Express e MongoDB.</p>
+        <hr class="my-4">
+        <p>Aqui você terá acesso a informações relevantes do mundo da programação!</p>
+        <p class="lead">
+            <a href="/users/register" class="btn btn-primary btn-lg" role="button">Criar uma conta</a>
+        </p>
+    </div>  
+</div>
+<hr>
+<h2>Postagens recentes:</h2>
+
+{{#each posts}}
+    <div class="card mt-4">
+        <div class="card-body">
+            <h3>{{title}}</h3>
+            <p>{{description}}</p>
+            <a href="/posts/{{slug}}"><button class="btn btn-success">Leia mais</button></a>
+            <hr>
+            <small>Categoria: {{category.name}}</small><br>
+            <small>Data de publicação: {{date}}</small>
+        </div>
+    </div>
+{{else}}
+    <p>Não há postagens no momento.</p>
+{{/each}}
