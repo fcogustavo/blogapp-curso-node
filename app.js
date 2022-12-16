@@ -18,7 +18,7 @@
 // Configurations
     // Session
         app.use(session({
-            secret: 'Librum1995@#',
+            secret: '',
             resave: true,
             saveUninitialized: true    
         }));
